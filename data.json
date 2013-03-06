@@ -1,0 +1,45 @@
+{
+    "identity": "Pittsburgher",
+    "items": [
+        {
+            "name": "Cool Painting #1",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Painting #2",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Painting #3",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Painting #4",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Painting #5",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Artifact #1",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Artifact #2",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Artifact #3",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Artifact #4",
+            "teaser": "Did you know this is sooo coooool?"
+        },
+        {
+            "name": "Cool Artifact #5",
+            "teaser": "Did you know this is sooo coooool?"
+        }
+    ]
+}
