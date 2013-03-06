@@ -53,9 +53,11 @@
 		 g.append("text")
 		 .attr("x",50)
 		 .attr("y",150)
-		 .text("Hello World");
-		 
-		
+		 .text(function(){
+			 $.getJSON("data.json",
+			function(data){
+			 return data.identity; 
+			})
 		});
 		
 		$(function() {
