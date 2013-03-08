@@ -2,6 +2,7 @@
     "data": [
         {
             "identity": "Pittsburgher",
+			"image": "images/PITTSBURGHER.png",
             "items": [
                 {
                     "name": "Cool Painting #1",
@@ -46,7 +47,8 @@
             ]
         },
         {
-            "identity": "Fashionista",
+            "identity": "Geek",
+			"image": "images/GEEK.png",
             "items": [
                 {
                     "name": "Cool Painting #1",
@@ -91,7 +93,8 @@
             ]
         },
         {
-            "identity": "Maker",
+            "identity": "Blind Date",
+			"image": "images/BLIND-DATE.png",
             "items": [
                 {
                     "name": "Cool Painting #1",
