@@ -3,6 +3,7 @@
         {
             "identity": "Pittsburgher",
 			"image": "images/PITTSBURGHER.png",
+			"about":"This is what it's about",
             "items": [
                 {
                     "name": "Cool Painting #1",
@@ -49,6 +50,7 @@
         {
             "identity": "Geek",
 			"image": "images/GEEK.png",
+			"about":"This is what it's about",
             "items": [
                 {
                     "name": "Cool Painting #1",
@@ -95,6 +97,7 @@
         {
             "identity": "Blind Date",
 			"image": "images/BLIND-DATE.png",
+			"about":"This is what it's about",
             "items": [
                 {
                     "name": "Cool Painting #1",
