@@ -7,10 +7,9 @@
 				.linkDistance(200)
 				.size([w, h]);
 		
-		var svg = d3.select("#chart").append("svg")
-		.attr("class","ui-grid-a .ui-responsive");
+		var svg = d3.select("#chart").append("svg");
+		//.attr("class","ui-grid-a .ui-responsive");
 		
-		var ypos = 20;
 		var color = d3.scale.category20();
 		d3.json(
           'fdgTest.json',
@@ -28,17 +27,29 @@
 
 		  var node = svg.selectAll(".node")
 			  .data(data.nodes)
-			.enter().append("circle")
-			  .attr("class", "node")
+			.enter().append("g")
+			.attr("class", "node")
+			.call(force.drag);
+			
+			var ahref = node.append("a")
+			            .attr("href","#teaser")
+						.attr("data-rel","popup");
+			
+			ahref.append("circle")
+			  .attr("x","-8")
+			  .attr("y","-8")
 			  .attr("r", function(d)
 			  {
-				if(d.group == 1) return 100;
-				else return 50;
+				if(d.group == 1) return h/5;
+				else return h/10;
 			  })
-			  .style("fill", function(d) { return color(d.group); })
-			  .call(force.drag);
-
-		  node.append("title")
+			  .style("fill", function(d) { return color(d.group); });
+			  
+			
+			ahref.append("text")
+			  .attr("dx",-10)
+			  .attr("dy",".35em")
+			  .attr("class","black")
 			  .text(function(d) { return d.name; });
 
 		  force.on("tick", function() {
@@ -47,8 +58,8 @@
 				.attr("x2", function(d) { return d.target.x; })
 				.attr("y2", function(d) { return d.target.y; });
 
-			node.attr("cx", function(d) { return d.x; })
-				.attr("cy", function(d) { return d.y; });
+			node.attr("transform", function(d) 
+			{ return "translate(" + d.x + "," + d.y + ")"; });
 		  });//force.on()
 		});//d3.json()
 	});//ready(function)
