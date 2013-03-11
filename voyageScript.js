@@ -4,7 +4,7 @@
 		
 		var force = d3.layout.force()
 				.charge(-10000)
-				.linkDistance(200)
+				//.linkDistance(200)
 				.size([w, h]);
 		
 		var svg = d3.select("#chart").append("svg");
@@ -32,7 +32,8 @@
 			.call(force.drag);
 			
 			var ahref = node.append("a")
-			            .attr("href","#teaser")
+			            .attr("href","index.html")
+						.attr("data-role","button")
 						.attr("data-rel","popup");
 			
 			ahref.append("circle")
@@ -40,7 +41,8 @@
 			  .attr("y","-8")
 			  .attr("r", function(d)
 			  {
-				if(d.group == 1) return h/5;
+				if(d.group == 1){d.fixed = true; return h/5;}
+				if(d.group == 6){return h/50;}
 				else return h/10;
 			  })
 			  .style("fill", function(d) { return color(d.group); });
@@ -58,8 +60,10 @@
 				.attr("x2", function(d) { return d.target.x; })
 				.attr("y2", function(d) { return d.target.y; });
 
-			node.attr("transform", function(d) 
-			{ return "translate(" + d.x + "," + d.y + ")"; });
+				node.attr("transform", function(d) 
+				{ 
+					return "translate(" + d.x + "," + d.y + ")"; 
+				});
 		  });//force.on()
 		});//d3.json()
 	});//ready(function)
