@@ -1,3 +1,23 @@
+	function popUpTeaser()
+	{
+		//alert("popup");
+		$("#teaser").popup();
+		$("#teaser").popup("open");
+	}
+	
+	function startVoyage()
+	{
+		$.mobile.changePage("map.html", { reloadPage : "true"});
+	}
+	
+	function btntest_onclick() 
+	{
+		//alert("click");
+		$.mobile.changePage("atItem.html#checkin");
+		/*$("#permaMenu").popup();
+		$("#permaMenu").popup("open");*/
+	}
+
 	$(document).ready(function(){
 		var w = 960;
 		var	h = 500;
@@ -31,12 +51,14 @@
 			.attr("class", "node")
 			.call(force.drag);
 			
-			var ahref = node.append("a")
-			            .attr("href","index.html")
+			/*var ahref = node.append("a")
+			            .attr("xlink:href","#teaser")
 						.attr("data-role","button")
-						.attr("data-rel","popup");
+						.attr("data-rel","popup");*/
+						
 			
-			ahref.append("circle")
+			
+			node.append("circle")
 			  .attr("x","-8")
 			  .attr("y","-8")
 			  .attr("r", function(d)
@@ -45,10 +67,17 @@
 				if(d.group == 6){return h/50;}
 				else return h/10;
 			  })
+			  .attr("onclick",function(d)
+			  {
+				if(d.group == 1)
+				{return "return startVoyage()";}
+				else 
+				{return "return popUpTeaser()";}
+			  })
 			  .style("fill", function(d) { return color(d.group); });
 			  
 			
-			ahref.append("text")
+			node.append("text")
 			  .attr("dx",-10)
 			  .attr("dy",".35em")
 			  .attr("class","black")
@@ -68,6 +97,27 @@
 		});//d3.json()
 	});//ready(function)
 	
+	function checkinSubmit()
+	{
+		var ans = $('#answer').val();
+		if(ans == 5) 
+		{
+			$('#nextButton').removeClass('ui-disabled');
+			$('#correct').popup();
+			$('#correct').popup("open");
+		}
+		else
+		{
+			$('#wrong').popup();
+			$('#wrong').popup("open");
+		}
+	}
+	
+	function showTrivia()
+		{
+			alert("Hello");
+			$.mobile.changePage("atItem.html#trivia");
+		}
 		/*$(function() {
 			$('div[data-role="dialog"]').live('pagebeforeshow', function(e, ui) {
 				ui.prevPage.addClass("ui-dialog-background ");

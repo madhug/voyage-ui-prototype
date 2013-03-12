@@ -4,15 +4,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.css" />
 		<style>
-		.node {
-		  stroke: #fff;
-		  stroke-width: 1.5px;
+		
+		#floor
+		{
+			font-size:40;
+			fill:red;
 		}
-
-		.link {
-		  stroke: #999;
-		  stroke-opacity: .6;
+		
+		.itemNumber
+		{
+			font-size:30;
+			fill:red;
 		}
+		
+		.gallery
+		{
+			font-size:25;
+			fill:grey;
+		}
+		
 		.ui-dialog-background {
 		opacity: 0.5;
 		display: block !important;
@@ -58,10 +68,21 @@
 		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.js"></script>
 		<script src="http://d3js.org/d3.v2.js?2.9.1"></script>
+		<script>
+			function btntest_onclick() 
+			{
+				//alert("click");
+				$.mobile.changePage("atItem.html#checkin");
+				/*$("#permaMenu").popup();
+				$("#permaMenu").popup("open");*/
+			}
+		</script>
 		<!--<script src="voyageScript.js"></script>-->
 	</head> 
 	<body> 
 
+	
+	
 	<div data-role="page">
 	
 	<!--header-->
@@ -74,12 +95,43 @@
 	</div><!-- /header -->
 	
 	<!-- content -->
-		
+	
 	<div data-role="content" id="chart">
 			
-		<b>Who are you today?</b>	
-		<a href="index.html" data-theme="c"
-		class="ui-btn-left">Go</a>
+		<svg id="map">	
+			<path id="gallery1" d="M 450,0 L 450,250 0,250" stroke="black" fill=none stroke-width="4" />
+			<path id="gallery2" d="M 450,250 L 900,250" stroke="black" fill=none stroke-width="4" />
+			<!--<path id="gallery3" d="M 0,0 L 900,0 900,600 0,600 0,0" stroke="black" fill="white" stroke-width="4" />-->
+			<!--<path id="gallery4" d="M 0,0 L 900,0 900,600 0,600 0,0" stroke="black" fill="white" stroke-width="4" />-->
+			<path id="lobby" d="M 350,250 L 350,600 M 550,250 L 550,600" stroke="black" fill=none stroke-width="4" />
+			<path id="boundary" d="M 0,0 L 900,0 900,600 0,600 0,0" stroke="black" fill=none stroke-width="4" />
+			
+			<text id="floor" x=0 y=650>Floor #1</text>
+			<text class="gallery" x=25 y=375>Gallery 1</text>
+			<text class="gallery" x=25 y=55>Gallery 2</text>
+			<text class="gallery" x=775 y=55>Gallery 3</text>
+			<text class="gallery" x=775 y=375>Gallery 4</text>
+			<text class="gallery" x=410 y=375>Lobby</text>
+			
+			
+			<!--<a xlink:href="http://www-106.ibm.com//developerworks/">-->
+			<g>
+				<circle cx="250" cy="350" r="50" fill=white stroke=red stroke-width="4" onClick="return btntest_onclick()"/>
+				<text x="245" y="360" id="item1" class="itemNumber">1</text>
+			</g>
+			<!--</a>-->
+			
+
+		</svg>
+		
+		<div data-role="popup" id="permaMenu" class="ui-content">
+		<a href="#"
+			data-theme="c"
+			data-rel="back" data-role="button" 
+			data-icon="delete" data-iconpos="notext" 
+			class="ui-btn-right"></a>
+				<a href="#">Login</a>
+		</div>
 		
 	</div>
 		
@@ -89,6 +141,8 @@
 	<div data-role="footer" data-theme="c">
 		<a id="footerButton" class="centered" href="#permaMenu" data-rel="popup" data-icon="bars" data-iconpos="top" data-theme="c"></a>
 	</div>
-		
+	
+	</div>	
+	
 	</body>
 </html>
