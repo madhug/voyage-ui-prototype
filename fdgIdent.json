@@ -1,0 +1,24 @@
+{"links":[
+	{"source":0,"target":1,"value":1},
+	{"source":1,"target":2,"value":1},
+	{"source":2,"target":3,"value":1},
+	{"source":3,"target":4,"value":1},
+	{"source":4,"target":5,"value":1},
+	{"source":5,"target":6,"value":1},
+	{"source":6,"target":7,"value":1},
+	{"source":7,"target":8,"value":1},
+	{"source":8,"target":9,"value":1},
+	{"source":9,"target":0,"value":1}],
+"nodes":[
+	{"name":"Item 1","image":"images/BLIND-DATE.png","group":5},
+	{"name":"Item 2","image":"images/BLUE.png","group":5},
+	{"name":"Item 3","image":"images/FASHIONISTA.png","group":5},
+	{"name":"Item 4","image":"images/GEEK.png","group":5},
+	{"name":"Item 5","image":"images/MAKER.png","group":5},
+	{"name":"Item 6","image":"images/NATURALIST2.png","group":5},
+	{"name":"Item 7","image":"images/Photographer.png","group":5},
+	{"name":"Item 8","image":"images/PITTSBURGHER.png","group":5},
+	{"name":"Item 9","image":"images/SCIENTIST.png","group":5},
+	{"name":"Item 10","image":"images/TRAVELER.png","group":5}
+	]
+}

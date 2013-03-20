@@ -4,6 +4,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.css" />
 		<style>
+		
+		@media only screen and (min-width:0px) {
+			#chart{width:100px; height:100px;}
+		}
+
+		@media only screen and (min-width:400px) {
+			#chart{width:400px; height:400px;}
+		}
+
+		@media only screen and (min-width:500px) {
+			#chart{width:100%; height:100%;}
+		}
+
+		
 		.node {
 		  stroke: #fff;
 		  stroke-width: 1.5px;
@@ -42,12 +56,12 @@
 		}
 		
 		
-		[data-role=page]{
+		/*[data-role=page]{
 			height: 100% !important; position:relative !important;
 		}
 		[data-role=footer]{
 			bottom:0; position:absolute !important; top: auto !important; width:100%;
-		} 
+		} */
 		.centered
 		{
 			width: 100%;
@@ -60,9 +74,9 @@
 		<script src="http://d3js.org/d3.v2.js?2.9.1"></script>
 		<script src="voyageScript.js"></script>
 	</head> 
-	<body> 
+	<body onload="createChart()"> 
 
-	<div data-role="page">
+	<div data-role="page" id="webThingy">
 	
 	<!--header-->
 	<div data-role="header">
@@ -74,7 +88,7 @@
 	</div><!-- /header -->
 	
 	<!--pop ups-->
-	<div data-role="popup" id="permaMenu" class="ui-content">
+	<div data-role="popup" id="permaMenu" class="ui-content" >
 	<a href="#"
 		data-theme="c"
 		data-rel="back" data-role="button" 
@@ -86,7 +100,6 @@
 	<!-- content -->
 		
 	<div data-role="content" id="chart">
-			
 			
 			
 	</div>
@@ -103,9 +116,12 @@
 		data-rel="back" data-role="button" 
 		data-icon="delete" data-iconpos="notext" 
 		class="ui-btn-right">Close</a>
-			<p>Bet you didn't know this, dumbass!</p>
-	</div>
+			<p>Teaser#1</p>
 	</div>
 	
+	<script src="voyageScript.js"></script>
+	
+	</div>
+
 	</body>
 </html>
